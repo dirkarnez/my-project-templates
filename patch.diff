@@ -1,0 +1,16 @@
+--- CMakeLists.txt	2024-04-14 21:07:18.654052700 +0800
++++ CMakeLists_Good_Input.txt	2024-04-14 21:12:44.433466300 +0800
+@@ -1,10 +1,10 @@
+ cmake_minimum_required(VERSION 3.18)
+ 
+-project("portaudio-playground")
++project("${PROJECT}")
+ 
+-find_package(portaudio 19 EXACT REQUIRED) # PATHS "P:\\Downloads\\cpp-libraries\\portaudio\\build\\cmake\\portaudio")
++find_package(${LIBRARY} 19 EXACT REQUIRED) # PATHS "P:\\Downloads\\cpp-libraries\\portaudio\\build\\cmake\\portaudio")
+ 
+-if(portaudio_FOUND)
++if(${LIBRARY}_FOUND)
+     message(STATUS "YES")
+ else()
+     message(STATUS "NO")
