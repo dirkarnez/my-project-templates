@@ -23,6 +23,7 @@ function diff {
 	done
 
 	if [[ $ok == true ]] then
+ 		# -u means to generate "unified diff format" .diff
 		$DIFF  -u CMakeLists.txt CMakeLists_Good_Input.txt > patch.diff
 	else
 		echo "ok? $ok"
@@ -33,9 +34,9 @@ function diff {
 
 diff
 $USERPROFILE/Downloads/PortableGit/usr/bin/sed.exe --version
-$USERPROFILE/Downloads/PortableGit/usr/bin/sed.exe "s/\${PROJECT}/SFML/g ; s/\${LIBRARY}/SFML/g" patch.diff > 124
-$USERPROFILE/Downloads/PortableGit/usr/bin/patch.exe CMakeLists.txt 124
+$USERPROFILE/Downloads/PortableGit/usr/bin/sed.exe "s/\${PROJECT}/SFML/g ; s/\${LIBRARY}/SFML/g" patch.diff | $USERPROFILE/Downloads/PortableGit/usr/bin/patch.exe --backup CMakeLists.txt
 
 
 read -p ""
 
+ 
