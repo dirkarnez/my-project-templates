@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.18)
 
-project("SFML")
+project("portaudio-playground")
 
-find_package(SFML 19 EXACT REQUIRED) # PATHS "P:\\Downloads\\cpp-libraries\\portaudio\\build\\cmake\\portaudio")
+find_package(portaudio 19 EXACT REQUIRED) # PATHS "P:\\Downloads\\cpp-libraries\\portaudio\\build\\cmake\\portaudio")
 
-if(SFML_FOUND)
+if(portaudio_FOUND)
     message(STATUS "YES")
 else()
     message(STATUS "NO")
