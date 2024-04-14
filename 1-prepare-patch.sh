@@ -1,6 +1,8 @@
 #!/bin/bash
 export DOWNLOADS_DIR="$USERPROFILE/Downloads"
 export DIFF="$USERPROFILE/Downloads/PortableGit/usr/bin/diff.exe"
+export SED="$USERPROFILE/Downloads/PortableGit/usr/bin/sed.exe"
+export PATCH="$USERPROFILE/Downloads/PortableGit/usr/bin/patch.exe"
 
 declare -rA example_array=(
 	["\${PROJECT}"]=1
@@ -33,8 +35,8 @@ function diff {
 
 
 diff
-$USERPROFILE/Downloads/PortableGit/usr/bin/sed.exe --version
-$USERPROFILE/Downloads/PortableGit/usr/bin/sed.exe "s/\${PROJECT}/SFML/g ; s/\${LIBRARY}/SFML/g" patch.diff | $USERPROFILE/Downloads/PortableGit/usr/bin/patch.exe --backup CMakeLists.txt
+$SED --version
+$SED "s/\${PROJECT}/SFML-playground/g ; s/\${LIBRARY}/SFML/g" patch.diff | $PATCH --backup CMakeLists.txt
 
 
 read -p ""
