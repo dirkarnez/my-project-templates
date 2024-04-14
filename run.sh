@@ -28,6 +28,7 @@ function make_templated_patch {
  		# -u means to generate "unified diff format" .diff
 		#$DIFF --unified=3 CMakeLists.txt CMakeLists_Good_Input.txt > patch.diff
 		git diff --patch --output CMakeLists.txt.patch -U CMakeLists.txt CMakeLists_Good_Input.txt
+		# `git diff --patch --output portaudio-playground.patch -U` under the git directory
 	else
 		echo "ok? $ok"
 	fi
